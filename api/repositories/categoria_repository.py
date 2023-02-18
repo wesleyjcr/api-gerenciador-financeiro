@@ -2,6 +2,7 @@ from sqlalchemy.orm import Session
 
 from api.models import Categoria
 
+
 class CategoriaRepository:
     @staticmethod
     def find_all(db: Session) -> list[Categoria]:

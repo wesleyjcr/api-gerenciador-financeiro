@@ -3,7 +3,6 @@ from sqlalchemy import Column, Integer, String, DateTime, Float, ForeignKey
 from api.database import Base
 
 
-
 class Competencia(Base):
     __tablename__ = "competencia"
 
@@ -12,7 +11,9 @@ class Competencia(Base):
     descricao: str = Column(String(140))
     data_inicio: str = Column(DateTime)
     data_fim: str = Column(DateTime)
-    criado_em: str = Column(DateTime, default=datetime.datetime.now(datetime.timezone.utc))
+    criado_em: str = Column(
+        DateTime, default=datetime.datetime.now(datetime.timezone.utc)
+    )
     alterado_em: str = Column(DateTime)
 
 
@@ -47,8 +48,10 @@ class Lancamento(Base):
     descricao: str = Column(String(140))
     movimentacao: str = Column(String(1))
     data_vencimento: str = Column(DateTime)
-    valor: float = Column(Float)    
-    id_conta: int = Column(Integer, ForeignKey('conta.id'), nullable=False)
-    id_categoria: int = Column(Integer, ForeignKey('categoria.id'), nullable=False)
-    id_classificacao: int = Column(Integer, ForeignKey('classificacao.id'), nullable=False)
-    id_competencia: int = Column(Integer, ForeignKey('competencia.id'), nullable=False)
+    valor: float = Column(Float)
+    id_conta: int = Column(Integer, ForeignKey("conta.id"), nullable=False)
+    id_categoria: int = Column(Integer, ForeignKey("categoria.id"), nullable=False)
+    id_classificacao: int = Column(
+        Integer, ForeignKey("classificacao.id"), nullable=False
+    )
+    id_competencia: int = Column(Integer, ForeignKey("competencia.id"), nullable=False)
