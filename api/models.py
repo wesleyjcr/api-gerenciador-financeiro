@@ -53,7 +53,5 @@ class Lancamento(Base):
     valor: float = Column(Float)
     id_conta: int = Column(Integer, ForeignKey("conta.id"), nullable=False)
     id_categoria: int = Column(Integer, ForeignKey("categoria.id"), nullable=False)
-    id_classificacao: int = Column(
-        Integer, ForeignKey("classificacao.id"), nullable=False
-    )
+    id_classificacao: int = Column(Integer, ForeignKey("classificacao.id"), nullable=False)
     id_competencia: int = Column(Integer, ForeignKey("competencia.id"), nullable=False)
