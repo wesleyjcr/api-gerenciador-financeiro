@@ -11,10 +11,12 @@ class Competencia(Base):
     descricao: str = Column(String(140))
     data_inicio: str = Column(DateTime)
     data_fim: str = Column(DateTime)
-    criado_em: str = Column(
+    criado_em: datetime.datetime = Column(
         DateTime, default=datetime.datetime.now(datetime.timezone.utc)
     )
-    alterado_em: str = Column(DateTime)
+    alterado_em: datetime.datetime = Column(
+        DateTime, default=datetime.datetime.now(datetime.timezone.utc)
+    )
 
 
 class Conta(Base):
